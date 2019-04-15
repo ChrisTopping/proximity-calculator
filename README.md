@@ -29,7 +29,7 @@ Input files are csvs, with one business entry per line, in the form
  
  # Example input
  
-     --file C:/path/to/csv-file.csv --latlon 53.23468,-2.56134 --unit m --order sm --business Fleetsmart
+     --singleinstance --file C:/path/to/csv-file.csv --latlon 53.23468,-2.56134 --unit m --order sm --business Fleetsmart
      
  # Example output
  
