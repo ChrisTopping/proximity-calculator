@@ -6,6 +6,7 @@ import co.uk.cpt.proximity_calculator.business.Business;
 import co.uk.cpt.proximity_calculator.distance.Distance;
 import co.uk.cpt.proximity_calculator.distance_from_origin_finder.DistanceFromOriginFinder;
 import co.uk.cpt.proximity_calculator.importer.BusinessImporter;
+import co.uk.cpt.proximity_calculator.importer.BusinessRepository;
 import co.uk.cpt.proximity_calculator.importer.CsvBusinessRepository;
 import co.uk.cpt.proximity_calculator.location.LatLon;
 import co.uk.cpt.proximity_calculator.printer.Order;
@@ -24,7 +25,7 @@ import static co.uk.cpt.proximity_calculator.arguments.ArgumentListener.DEFAULT_
 public class DefaultCommandRunner implements CommandRunner {
 
     private final ArgumentListener listener;
-    private final BusinessImporter<CsvBusinessRepository> importer;
+    private final BusinessImporter<BusinessRepository<File>> importer;
     private final DistanceFromOriginFinder<Business> distanceFinder;
     private final OrderedLocatableDistancePrinter<Business> printer;
     private final CommandChecker<Option> checker;
@@ -33,7 +34,7 @@ public class DefaultCommandRunner implements CommandRunner {
     @Autowired
     public DefaultCommandRunner(
             ArgumentListener listener,
-            BusinessImporter<CsvBusinessRepository> importer,
+            BusinessImporter<BusinessRepository<File>> importer,
             DistanceFromOriginFinder<Business> distanceFinder,
             OrderedLocatableDistancePrinter<Business> printer,
             CommandChecker<Option> checker,
