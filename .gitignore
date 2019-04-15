@@ -1,0 +1,13 @@
+# intellij idea folder
+.idea/**
+
+# Iml files
+*.iml
+
+# Compiled class file
+*.class
+
+# Package Files #
+*.jar
+
+
